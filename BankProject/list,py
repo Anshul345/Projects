@@ -1,0 +1,8 @@
+list_n=[2,5,7,8]
+def sum_num(list_n):
+    if len(list_n)==1:
+        return list_n[0]
+    else:
+        return list_n[0]+sum_num(list_n[1:])
+    
+    print(sum_num([2,5,7,8]))
