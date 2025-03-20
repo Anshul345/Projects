@@ -1,0 +1,37 @@
+{%  load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>tittle</title>
+    <meta name="author" content="name" />
+    <meta name="description" content="description here"/> 
+    <meta name="keywords" content="keywords,here" />
+    <link rel="stylesheet" href="{%static 'styles.css' %}" type="text/css" />
+  </head>
+  <body>
+    <div class="container">
+      <form method="POST"> {% csrf_token %}
+        <input type="text" name="city" placeholder="Enter City">
+        <button type="submit" class="btn">Enter</button>
+      </form>
+      <div class="weather">
+        <div class="left">
+          <h2>{{temp}} &deg;</h2>
+          <h3>{{city}}</h3>
+        </div>
+        <div class="right">
+          <div class="icon">
+            <p><img scr='http://openweathermap.org/img/w{{icon}}.png' width="condition"/>
+            </p>
+          </div>
+          <div class="condition">
+            <p>{{description}}</p>
+            <p>{{day}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
